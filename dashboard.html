@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Stackly Dashboard</title>
+
+<link rel="stylesheet" href="dashboard.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="dashboard-wrapper">
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar" id="sidebar">
+
+ <div class="logo"><img src="assets/logo.webp" alt="Stackly" style="height: 40px;"></div>
+
+<nav>
+<ul>
+
+<li>
+<a href="404.html"><i class="fas fa-th-large"></i> Overview</a>
+</li>
+
+<li>
+<a href="404.html"><i class="fas fa-video"></i> Meetings</a>
+</li>
+
+<li>
+<a href="404.html"><i class="fas fa-users"></i> Team</a>
+</li>
+
+<li>
+<a href="404.html"><i class="fas fa-chart-line"></i> Analytics</a>
+</li>
+
+<li>
+<a href="404.html"><i class="fas fa-cog"></i> Settings</a>
+</li>
+
+<li>
+<a href="index.html" class="logout">
+<i class="fas fa-sign-out-alt"></i> Logout
+</a>
+</li>
+
+</ul>
+</nav>
+
+</aside>
+
+<!-- MAIN CONTENT -->
+
+<main class="main-content">
+
+<!-- TOP BAR -->
+
+<header class="top-bar">
+
+<div class="toggle-btn" id="sidebarToggle">
+    <i class="fas fa-bars"></i>
+</div>
+
+<div class="user-profile">
+<span>Welcome back, <strong>User</strong></span>
+<img src="assets/user_profile.webp" alt="Profile">
+</div>
+
+</header>
+
+<section class="content-body">
+
+<!-- WELCOME -->
+
+<div class="welcome-banner">
+<h1>Dashboard Overview</h1>
+<p>Welcome back! You have <strong>3 meetings</strong> scheduled for today.</p>
+</div>
+
+<!-- QUICK ACTIONS -->
+
+<div class="quick-actions">
+
+<button class="btn btn-primary">
+<i class="fas fa-plus"></i> New Meeting
+</button>
+
+<button class="btn btn-secondary">
+<i class="fas fa-calendar-alt"></i> Schedule
+</button>
+
+<button class="btn btn-outline">
+<i class="fas fa-video"></i> Join with ID
+</button>
+
+</div>
+
+<div class="dashboard-grid">
+
+<!-- LEFT COLUMN -->
+
+<div class="left-col">
+
+<div class="stats-grid">
+
+<div class="stat-card">
+<i class="fas fa-calendar-check"></i>
+<div>
+<h3>12</h3>
+<p>Total Meetings</p>
+</div>
+</div>
+
+<div class="stat-card">
+<i class="fas fa-clock"></i>
+<div>
+<h3>450</h3>
+<p>Minutes Hosted</p>
+</div>
+</div>
+
+<div class="stat-card">
+<i class="fas fa-user-plus"></i>
+<div>
+<h3>28</h3>
+<p>Participants</p>
+</div>
+</div>
+
+</div>
+
+<div class="table-container">
+
+<div class="table-header">
+<h3>Recent Meetings</h3>
+<a href="404.html" class="view-all">View All</a>
+</div>
+
+<table>
+
+<thead>
+<tr>
+<th>Meeting Name</th>
+<th>Date</th>
+<th>Status</th>
+</tr>
+</thead>
+
+<tbody>
+
+<tr>
+<td>Design Sprint</td>
+<td>Mar 12</td>
+<td><span class="status completed">Done</span></td>
+</tr>
+
+<tr>
+<td>Weekly Sync</td>
+<td>Mar 13</td>
+<td><span class="status active">Live</span></td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<!-- RIGHT COLUMN -->
+
+<div class="right-col">
+
+<div class="widget">
+
+<h3>Upcoming Reminders</h3>
+
+<div class="reminder-item">
+<span class="time">14:00</span>
+<p>Project Handover</p>
+</div>
+
+<div class="reminder-item">
+<span class="time">16:00</span>
+<p>Client Meeting</p>
+</div>
+
+</div>
+
+<div class="widget">
+
+<i class="fas fa-users"></i>
+
+<h3>Team Collaboration</h3>
+
+<p>Chat with your team, share files, and stay connected.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+</div>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", () => {
+
+const sidebarToggle = document.getElementById("sidebarToggle");
+const sidebar = document.getElementById("sidebar");
+
+sidebarToggle.addEventListener("click", (e) => {
+    e.stopPropagation();
+    sidebar.classList.toggle("active");
+});
+
+document.addEventListener("click", (e) => {
+    if (sidebar.classList.contains("active") && !sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
+        sidebar.classList.remove("active");
+    }
+});
+
+const navItems = document.querySelectorAll(".sidebar ul li");
+
+navItems.forEach(item => {
+
+item.addEventListener("click", function(){
+
+navItems.forEach(i => i.classList.remove("active"));
+this.classList.add("active");
+
+});
+
+});
+
+});
+
+
+    // Active Navbar Link Logic
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('#nav-list a').forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+            link.classList.add('active');
+        }
+    });
+
+</script>
+
+</body>
+</html>
+

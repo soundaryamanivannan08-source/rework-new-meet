@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - Stackly</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="service.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo">
+            <img src="assets/logo.webp" alt="Stackly" style="height: 40px;">
+        </div>
+
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav id="nav-list">
+            <div class="dropdown">
+                <a href="index.html" class="dropdown-trigger">Home <i class="fas fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i></a>
+                <div class="dropdown-content">
+                    <a href="index.html">Home 1 </a>
+                    <a href="home2.html">Home 2 </a>
+                </div>
+            </div>
+
+            <a href="about.html">About</a>
+            <a href="service.html">Services</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+            <a href="dashboard.html">Dashboard</a>
+
+            <a href="login.html" class="login-btn">Login</a>
+        </nav>
+    </header>
+
+    <section class="service-hero">
+        <div class="hero-content">
+            <span class="badge">POWERING REMOTE TEAMS</span>
+            <h1>Smart Tools For Productive Teams</h1>
+            <p>Stackly helps teams communicate, manage meetings, and collaborate seamlessly from anywhere in the world.</p>
+            <div class="hero-actions">
+                <a href="404.html" class="btn-primary">Start Free Trial</a>
+                <a href="#pricing-calculator" class="btn-secondary">View Pricing</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-grid">
+        <div class="section-title reveal">
+            <h2>Our Core Ecosystem</h2>
+            <p>Everything you need to sync up with your global distributed workspace channels.</p>
+        </div>
+        <div class="container">
+            <div class="service-box reveal">
+                <div class="icon-wrapper"><i class="fas fa-video"></i></div>
+                <h3>Virtual Meetings</h3>
+                <p>Host high-quality video meetings with your team or clients from anywhere with smooth and secure connections.</p>
+            </div>
+            <div class="service-box reveal">
+                <div class="icon-wrapper"><i class="fas fa-users"></i></div>
+                <h3>Team Collaboration</h3>
+                <p>Work together in real-time with chat, file sharing, and collaborative tools designed for modern teams.</p>
+            </div>
+            <div class="service-box reveal">
+                <div class="icon-wrapper"><i class="fas fa-shield-halved"></i></div>
+                <h3>Advanced Security</h3>
+                <p>Your meetings and data are protected using enterprise-level encryption and security protocols.</p>
+            </div>
+            <div class="service-box reveal">
+                <div class="icon-wrapper"><i class="fas fa-cloud"></i></div>
+                <h3>Cloud Recording</h3>
+                <p>Record your meetings and store them securely in the cloud for easy sharing and future reference.</p>
+            </div>
+            <div class="service-box reveal">
+                <div class="icon-wrapper"><i class="fas fa-brain"></i></div>
+                <h3>AI Meeting Summary</h3>
+                <p>Automatically generate meeting notes, highlights, and action points using AI technology.</p>
+            </div>
+            <div class="service-box reveal">
+                <div class="icon-wrapper"><i class="fas fa-chart-line"></i></div>
+                <h3>Analytics & Reports</h3>
+                <p>Track meeting performance and team productivity with powerful analytics dashboards.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <div class="section-title reveal-up">
+            <span class="badge">SIMPLE PIPELINE</span>
+            <h2>How It Works</h2>
+            <p>Deploy a virtual space and connect with your team in less than 60 seconds.</p>
+        </div>
+
+        <div class="steps-container">
+            <div class="step-card reveal-up">
+                <div class="step-num">1</div>
+                <div class="icon-wrapper"><i class="fas fa-plus"></i></div>
+                <h3>Create Space</h3>
+                <p>Initialize a secure, high-bitrate workspace channel matching your development project target in one click.</p>
+            </div>
+
+            <div class="step-card reveal-up" style="transition-delay: 150ms;">
+                <div class="step-num">2</div>
+                <div class="icon-wrapper"><i class="fas fa-user-plus"></i></div>
+                <h3>Share Staging Link</h3>
+                <p>Distribute auto-generated zero-knowledge room links to team peers or client managers easily.</p>
+            </div>
+
+            <div class="step-card reveal-up" style="transition-delay: 300ms;">
+                <div class="step-num">3</div>
+                <div class="icon-wrapper"><i class="fas fa-network-wired"></i></div>
+                <h3>Collaborate Live</h3>
+                <p>Sync overlays, run deep telemetry feeds, and interact using pixel-perfect whiteboard integrations.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing-calculator" class="pricing-calc-section">
+        <div class="section-title reveal">
+            <h2>Flexible Scale Pricing</h2>
+            <p>Slide to estimate your corporate workspace plan based on active monthly team seats.</p>
+        </div>
+        <div class="calc-container reveal">
+            <div class="slider-box">
+                <label for="seat-slider">Team Size: <span id="seat-count">25</span> Seats</label>
+                <input type="range" id="seat-slider" min="5" max="200" value="25" step="5">
+                <div class="slider-labels">
+                    <span>5 Seats</span>
+                    <span>100 Seats</span>
+                    <span>200+ Seats</span>
+                </div>
+            </div>
+            <div class="price-display-box">
+                <div class="price-metric">
+                    <span class="currency">$</span>
+                    <span id="calculated-price">200</span>
+                    <span class="period">/mo</span>
+                </div>
+                <p id="plan-tier-name" class="plan-badge">Growth Tier</p>
+                <ul class="plan-features">
+                    <li><i class="fas fa-check-circle"></i> <span id="feat-encryption">AES-256 Bit Encryption</span></li>
+                    <li><i class="fas fa-check-circle"></i> Sub-20ms Audio Routing Latency</li>
+                    <li><i class="fas fa-check-circle"></i> Custom API Integrations</li>
+                </ul>
+                <a href="404.html" class="btn-primary pricing-btn">Select Plan</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="integrations">
+        <div class="integrations-container">
+            <div class="integrations-text reveal-left">
+                <span class="badge">NATIVE CONNECTIVITY</span>
+                <h2>Connect Your Entire Workspace</h2>
+                <p>Stackly integrates natively with the tools you use every day, letting you synchronize task backlogs, sketch assets, and code pipelines directly during meetings.</p>
+                <a href="404.html" class="btn-primary">Explore Integrations <i class="fas fa-figma"></i></a>
+            </div>
+
+            <div class="integrations-grid reveal-right">
+                <div class="integration-badge">
+                    <i class="fab fa-slack"></i>
+                    <span>Slack Sync</span>
+                </div>
+                <div class="integration-badge">
+                    <i class="fab fa-jira"></i>
+                    <span>Jira Backlog</span>
+                </div>
+                <div class="integration-badge">
+                    <i class="fab fa-figma"></i>
+                    <span>Figma Canvas</span>
+                </div>
+                <div class="integration-badge">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub Actions</span>
+                </div>
+                <div class="integration-badge">
+                    <i class="fab fa-notion"></i>
+                    <span>Notion Docs</span>
+                </div>
+                <div class="integration-badge">
+                    <i class="fab fa-salesforce"></i>
+                    <span>Salesforce CRM</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing-packages">
+        <div class="section-title reveal-up">
+            <span class="badge">FIXED PACKAGES</span>
+            <h2>Select Your Structure</h2>
+            <p>Predictable monthly plans built to scale with technical distributed agencies of all sizes.</p>
+        </div>
+
+        <div class="packages-container">
+            <div class="package-card reveal-scale">
+                <h3>Starter Plan</h3>
+                <p class="package-desc">Perfect setup for independent developers and quick syncs.</p>
+                <div class="package-price">$0 <span>/mo</span></div>
+                <ul class="package-features">
+                    <li><i class="fas fa-check-circle"></i> 40-minute meeting limit</li>
+                    <li><i class="fas fa-check-circle"></i> Up to 50 active users</li>
+                    <li><i class="fas fa-check-circle"></i> Standard AES-128 security</li>
+                    <li style="opacity: 0.5; text-decoration: line-through;"><i class="fas fa-times-circle"></i> Custom whiteboards</li>
+                </ul>
+                <a href="404.html" class="btn-secondary">Get Started Free</a>
+            </div>
+
+            <div class="package-card popular reveal-scale" style="transition-delay: 150ms;">
+                <div class="popular-ribbon">Most Popular</div>
+                <h3>Pro Growth</h3>
+                <p class="package-desc">Designed for fluid business syncs and active engineering.</p>
+                <div class="package-price">$15 <span>/mo</span></div>
+                <ul class="package-features">
+                    <li><i class="fas fa-check-circle"></i> <strong>Unlimited</strong> call length</li>
+                    <li><i class="fas fa-check-circle"></i> Up to 300 active users</li>
+                    <li><i class="fas fa-check-circle"></i> Advanced AES-256 security</li>
+                    <li><i class="fas fa-check-circle"></i> Custom whiteboards & API</li>
+                </ul>
+                <a href="404.html" class="btn-primary">Upgrade to Pro</a>
+            </div>
+
+            <div class="package-card reveal-scale" style="transition-delay: 300ms;">
+                <h3>Enterprise Suite</h3>
+                <p class="package-desc">Mission-critical resilience for full infrastructure scaling.</p>
+                <div class="package-price">$39 <span>/mo</span></div>
+                <ul class="package-features">
+                    <li><i class="fas fa-check-circle"></i> <strong>Unlimited</strong> call length</li>
+                    <li><i class="fas fa-check-circle"></i> Up to 1,000 active users</li>
+                    <li><i class="fas fa-check-circle"></i> Zero-Knowledge encryption</li>
+                    <li><i class="fas fa-check-circle"></i> 24/7 dedicated support reps</li>
+                </ul>
+                <a href="404.html" class="btn-secondary">Contact Architecture</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq-section">
+        <div class="section-title reveal">
+            <h2>Frequently Asked Questions</h2>
+            <p>Clear, direct answers regarding infrastructure, regional nodes, and setup policies.</p>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item reveal">
+                <button class="faq-question">How does Stackly guarantee sub-20ms audio latency? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>We operate our own edge-routing server matrix across 25 countries. Instead of standard web infrastructure path loops, calls connect dynamically to the closest geolocation matrix node node.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question">What does your zero-knowledge security profile mean? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>It means your meeting metrics are encrypted locally before passing through our server layers. We cannot view, log, or parse your conversations, nor do we supply structural data pipelines to third-party AI frameworks.</p>
+                </div>
+            </div>
+            <div class="faq-item reveal">
+                <button class="faq-question">Can we integrate our internal task-trackers and CRM logs? <i class="fas fa-chevron-down"></i></button>
+                <div class="faq-answer">
+                    <p>Yes. Stackly v2.0 features fully localized custom REST API endpoint hooks. You can link data streams directly with platforms like Slack, Jira, and Salesforce via your developer console workspace dashboards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div class="logo"><img src="assets/logo.webp" alt="Stackly" style="height: 40px;"></div>
+                <p>
+                    A clean, purpose-driven collaboration matrix platform built for teams who challenge physical boundaries. Host meetings, securely synchronize workspaces, and scale workflows effortlessly.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="index.html">Home Ecosystem</a></li>
+                    <li><a href="about.html">About Operations</a></li>
+                    <li><a href="contact.html">Contact Engineering</a></li>
+                    <li><a href="404.html">Join Live Channel</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Resources</h4>
+                <ul>
+                    <li><a href="404.html">Help Center</a></li>
+                    <li><a href="404.html">Documentation Portal</a></li>
+                    <li><a href="404.html">Privacy Compliance</a></li>
+                    <li><a href="404.html">Terms of Operations</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="404.html" aria-label="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="404.html" aria-label="Messenger Channel"><i class="fa-brands fa-facebook-messenger"></i></a>
+                   
+                    <a href="404.html" aria-label="LinkedIn Ecosystem"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Stackly Meeting Platform. All rights reserved globally.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu Toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('nav-list').classList.toggle('active');
+        });
+
+        // Scroll Reveal Animation Engine
+        function reveal() {
+            let reveals = document.querySelectorAll(".reveal, .reveal-up, .reveal-left, .reveal-right, .reveal-scale");
+            for (let i = 0; i < reveals.length; i++) {
+                let windowHeight = window.innerHeight;
+                let elementTop = reveals[i].getBoundingClientRect().top;
+                let elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        document.addEventListener("DOMContentLoaded", reveal);
+
+        // Active Navbar Link Logic
+        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+        document.querySelectorAll('#nav-list a').forEach(link => {
+            if (link.getAttribute('href') === currentPath) {
+                link.classList.add('active');
+            }
+        });
+
+        // Interactive Price Calculator Logic
+        const slider = document.getElementById('seat-slider');
+        const seatCount = document.getElementById('seat-count');
+        const calcPrice = document.getElementById('calculated-price');
+        const tierName = document.getElementById('plan-tier-name');
+        const featEncryption = document.getElementById('feat-encryption');
+
+        slider.addEventListener('input', function() {
+            const seats = parseInt(this.value);
+            seatCount.textContent = seats;
+            
+            let price = 0;
+            if (seats <= 30) {
+                price = seats * 8;
+                tierName.textContent = "Starter Core Tier";
+                featEncryption.textContent = "Standard AES-128 Encryption";
+            } else if (seats <= 100) {
+                price = seats * 7;
+                tierName.textContent = "Growth Scale Plan";
+                featEncryption.textContent = "Advanced AES-256 Encryption";
+            } else {
+                price = seats * 6;
+                tierName.textContent = "Enterprise Network Tier";
+                featEncryption.textContent = "Custom Security Profiles";
+            }
+            calcPrice.textContent = price;
+        });
+
+        // Accordion FAQ Mechanic
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', function() {
+                const item = this.parentElement;
+                item.classList.toggle('open');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,851 @@
+/* ==========================================================================
+   1. VARIABLES & DESIGN TOKENS
+   ========================================================================== */
+:root {
+    --primary-color: #007bff;
+    --primary-dark: #0056b3;
+    --primary-light: #e3f2fd;
+    --text-main: #333333;
+    --text-muted: #666666;
+    --text-light: #888888;
+    --bg-main: #ffffff;
+    --bg-alt: #f8f9fa;
+    --bg-tag: #f1f3f5;
+    --border-color: #eeeeee;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* ==========================================================================
+   2. GLOBAL RESETS & BASE STYLES
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: clip;
+}
+
+body {
+    font-family: var(--font-stack);
+    color: var(--text-main);
+    background-color: #fcfcfc;
+    line-height: 1.5;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   3. NAVIGATION BAR & HEADER
+   ========================================================================== */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(226, 232, 240, 0.5);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#nav-list {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+#nav-list a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition-smooth);
+    position: relative;
+    padding: 5px 0;
+}
+
+#nav-list a:hover, 
+#nav-list a.active {
+    color: var(--primary-color);
+}
+
+/* Underline effect for active/hover links */
+#nav-list a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: var(--transition-smooth);
+}
+
+#nav-list a:hover::after,
+#nav-list a.active::after {
+    width: 100%;
+}
+
+/* Dropdown styling */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--bg-main);
+    box-shadow: var(--shadow-lg);
+    border-radius: 6px;
+    min-width: 150px;
+    overflow: hidden;
+    padding: 5px 0;
+}
+
+.dropdown-content a {
+    padding: 10px 15px !important;
+    display: block;
+}
+
+.dropdown-content a::after {
+    display: none;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    animation: fadeIn 0.2s ease;
+}
+
+.login-btn {
+    background-color: var(--primary-color);
+    color: white !important;
+    padding: 8px 20px !important;
+    border-radius: 4px;
+}
+
+.login-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.login-btn::after {
+    display: none !important;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-main);
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   4. HERO SECTION
+   ========================================================================== */
+.blog-hero {
+    background: linear-gradient(135deg, #0d47a1 0%, #007bff 100%);
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.blog-hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    animation: slideDown 0.6s ease-out;
+}
+
+.blog-hero p {
+    font-size: 1.15rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+    line-height: 1.6;
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* ==========================================================================
+   5. FILTERS & CONTROLS
+   ========================================================================== */
+.blog-filters input {
+    outline: none;
+    transition: var(--transition-smooth);
+}
+
+.blog-filters input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+    width: 280px;
+}
+
+.filter-tag {
+    transition: var(--transition-smooth);
+    user-select: none;
+}
+
+.filter-tag:hover:not(.active) {
+    background-color: #e9ecef !important;
+    color: #000 !important;
+}
+
+/* ==========================================================================
+   6. FEATURED POST HERO CARD
+   ========================================================================== */
+.featured-post {
+    transition: var(--transition-smooth);
+}
+
+.featured-post:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.featured-img {
+    transition: var(--transition-smooth);
+}
+
+.featured-post:hover .featured-img {
+    transform: scale(1.02);
+}
+
+/* ==========================================================================
+   7. BLOG GRID & STANDARD CARDS
+   ========================================================================== */
+.blog-section {
+    padding: 60px 0;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.blog-card {
+    background-color: var(--bg-main);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition-smooth);
+}
+
+.blog-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+}
+
+.blog-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: var(--transition-smooth);
+}
+
+.blog-card:hover .blog-img {
+    transform: scale(1.05);
+}
+
+.blog-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.blog-category {
+    align-self: flex-start;
+    background-color: var(--primary-light);
+    color: var(--primary-dark);
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.blog-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    line-height: 1.4;
+    color: var(--text-main);
+    transition: var(--transition-smooth);
+}
+
+.blog-card:hover .blog-content h3 {
+    color: var(--primary-color);
+}
+
+.blog-content p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.blog-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+    margin-top: auto;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.author img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-main);
+}
+
+.date {
+    font-size: 0.85rem;
+    color: var(--text-light);
+}
+
+/* ==========================================================================
+   8. PAGINATION & NEWSLETTER
+   ========================================================================== */
+.pagination a {
+    transition: var(--transition-smooth);
+}
+
+.pagination a:hover:not(.active) {
+    background-color: var(--bg-tag);
+}
+
+.newsletter-section form input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+}
+
+.newsletter-section form button {
+    transition: var(--transition-smooth);
+}
+
+.newsletter-section form button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   9. FOOTER SYSTEM
+   ========================================================================== */
+.footer {
+    background: #1e293b;
+    color: #94a3b8;
+    padding: 80px 5% 30px 5%;
+    border-top: 1px solid #334155;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr repeat(3, 1fr);
+    gap: 50px;
+    margin-bottom: 60px;
+}
+
+.footer-col .logo { margin-bottom: 20px; }
+
+.footer-col p { 
+    line-height: 1.7; 
+    font-size: 0.9rem;
+    margin-top: 15px;
+}
+
+.footer-col h4 {
+    color: #f8fafc;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+}
+
+.footer-col ul { list-style: none; }
+
+.footer-col ul li { margin-bottom: 12px; }
+
+.footer-col ul li a {
+    color: #94a3b8;
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.footer-col ul li a:hover { 
+    color: #ffffff; 
+    padding-left: 4px; 
+}
+
+.social-links {
+    display: flex;
+    gap: 12px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background: #334155;
+    color: #f8fafc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition-smooth);
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    background: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 30px;
+    border-top: 1px solid #334155;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #94a3b8;
+}
+
+/* ==========================================================================
+   10. SCROLL REVEAL ANIMATIONS
+   ========================================================================== */
+.reveal {
+    position: relative;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.215, 0.610, 0.355, 1), 
+                transform 0.8s cubic-bezier(0.215, 0.610, 0.355, 1);
+    will-change: transform, opacity;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================================================
+   11. EXTRA STYLES FOR FILTERS, FEATURED POST & CONTROLS
+   ========================================================================== */
+.filters-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+    gap: 15px;
+}
+
+.search-bar {
+    position: relative;
+}
+
+.search-bar input {
+    padding: 10px 15px 10px 40px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    width: 250px;
+    transition: var(--transition-smooth);
+}
+
+.search-bar i {
+    position: absolute;
+    left: 15px;
+    top: 13px;
+    color: #888;
+}
+
+.categories-tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-tag {
+    background: var(--bg-tag);
+    color: var(--text-main);
+    padding: 5px 15px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: var(--transition-smooth);
+}
+
+.filter-tag.active {
+    background: var(--primary-color) !important;
+    color: #fff !important;
+}
+
+/* Featured Post Styling */
+.featured-post {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 30px;
+    margin-bottom: 50px;
+    background: var(--bg-main);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    align-items: stretch;
+}
+
+.featured-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    min-height: 380px;
+    transition: var(--transition-smooth);
+}
+
+.featured-content {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.featured-category {
+    background: var(--primary-light);
+    color: var(--primary-dark);
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    align-self: flex-start;
+    margin-bottom: 15px;
+}
+
+.featured-title {
+    margin: 10px 0 15px 0;
+    font-size: 2.2rem;
+    line-height: 1.3;
+    color: var(--text-main);
+    font-weight: 700;
+    transition: var(--transition-smooth);
+}
+
+.featured-post:hover .featured-title {
+    color: var(--primary-color);
+}
+
+.featured-desc {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 25px;
+    font-size: 1.05rem;
+}
+
+.featured-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+    margin-top: auto;
+}
+
+.featured-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.featured-author img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.featured-author span {
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.featured-date {
+    color: var(--text-light);
+    font-size: 0.9rem;
+}
+
+/* Pagination Styling */
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 8px;
+}
+
+.pagination a {
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition-smooth);
+}
+
+.pagination a.active {
+    background: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+/* Newsletter Section Styling */
+.newsletter-section {
+    background: var(--bg-alt);
+    padding: 80px 0;
+    border-top: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.newsletter-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.newsletter-section h3 {
+    font-size: 2rem;
+    margin-bottom: 12px;
+    color: var(--text-main);
+    font-weight: 700;
+}
+
+.newsletter-desc {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.newsletter-input {
+    padding: 14px 20px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    width: 320px;
+    max-width: 100%;
+    font-size: 1rem;
+    transition: var(--transition-smooth);
+}
+
+.newsletter-btn {
+    padding: 14px 30px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: var(--transition-smooth);
+}
+
+/* ==========================================================================
+   12. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 992px) {
+    .featured-post {
+        grid-template-columns: 1fr;
+    }
+    .featured-img {
+        height: 300px;
+        min-height: auto;
+    }
+    .featured-content {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar { padding: 16px 20px; }
+    .menu-toggle { display: flex; }
+    
+    .menu-toggle.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle.open span:nth-child(2) { opacity: 0; }
+    .menu-toggle.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+    
+    #nav-list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--bg-main);
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 24px;
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: var(--shadow-lg);
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+        transition: var(--transition-smooth);
+    }
+    
+    #nav-list.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+    
+    .dropdown-content {
+        position: relative;
+        box-shadow: none;
+        border: none;
+        background: #f8fafc;
+        width: 100%;
+        text-align: center;
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+        display: none;
+    }
+    .dropdown:hover .dropdown-content { display: block; }
+
+    .blog-hero h1 {
+        font-size: 2.2rem;
+    }
+    
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .filters-container {
+        flex-direction: column;
+        align-items: stretch !important;
+        gap: 20px;
+    }
+    
+    .search-bar input {
+        width: 100% !important;
+    }
+
+    .categories-tags {
+        justify-content: center;
+    }
+
+    .footer-container { grid-template-columns: 1fr; gap: 40px; }
+}
+
+@media (max-width: 576px) {
+    /* Spacing & Padding */
+    .blog-hero, section, .featured-section, .newsletter-section {
+        padding: 50px 15px !important;
+    }
+
+    /* Typography */
+    .blog-hero h1, h1 {
+        font-size: 2rem !important;
+        line-height: 1.25 !important;
+    }
+    .blog-hero p, p {
+        font-size: 0.95rem !important;
+    }
+
+    /* Grids & Cards */
+    .blog-grid, .featured-post {
+        grid-template-columns: 1fr !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+    
+    .featured-content {
+        padding: 20px !important;
+    }
+    
+    .featured-img {
+        height: 200px !important;
+        min-height: auto !important;
+    }
+
+    /* Filters and Newsletters */
+    .newsletter-form {
+        flex-direction: column !important;
+        align-items: stretch !important;
+    }
+    
+    .newsletter-input {
+        width: 100% !important;
+    }
+}

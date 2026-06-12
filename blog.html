@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Stackly Meeting & Workspace Insights</title>
+    <link rel="stylesheet" href="blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="logo">
+        <img src="assets/logo.webp" alt="Stackly" style="height: 40px;">
+    </div>
+
+    <div class="menu-toggle" id="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <nav id="nav-list">
+        <div class="dropdown">
+            <a href="index.html" class="dropdown-trigger">Home <i class="fas fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i></a>
+            <div class="dropdown-content">
+                <a href="index.html">Home 1 </a>
+                <a href="home2.html">Home 2 </a>
+            </div>
+        </div>
+
+        <a href="about.html">About</a>
+        <a href="service.html">Services</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+        <a href="dashboard.html">Dashboard</a>
+
+        <a href="login.html" class="login-btn">Login</a>
+    </nav>
+</header>
+
+<section class="blog-hero">
+    <div class="container">
+        <h1>Latest Insights & Collaboration Tips</h1>
+        <p>Stay updated with the latest trends, tips, and strategies in virtual meetings, hybrid team management, and modern workspace productivity.</p>
+    </div>
+</section>
+
+<!-- Filter and Search Section -->
+<section class="blog-filters" style="margin-top: 40px;">
+    <div class="container filters-container">
+        <div class="search-bar">
+            <input type="text" placeholder="Search insights...">
+            <i class="fas fa-search"></i>
+        </div>
+        <div class="categories-tags">
+            <span class="filter-tag active">All</span>
+            <span class="filter-tag">Productivity</span>
+            <span class="filter-tag">Technology</span>
+            <span class="filter-tag">Security</span>
+            <span class="filter-tag">Workspace</span>
+            <span class="filter-tag">Strategy</span>
+        </div>
+    </div>
+</section>
+
+<section class="blog-section">
+    <div class="container">
+        
+        <!-- Featured Large Blog Post -->
+        <div class="featured-post reveal">
+            <img src="assets/toWEBP (1) (2)/workplace.webp" alt="Digital Team Collaboration" class="featured-img">
+            <div class="featured-content">
+                <span class="featured-category">Featured • Technology</span>
+                <h2 class="featured-title">The Future of Virtual Spaces: Designing Next-Gen Collaborative Meetings</h2>
+                <p class="featured-desc">Explore how modern teams leverage interactive spatial audio, zero-latency screensharing, and immersive virtual environments to run productive meetings without fatigue.</p>
+                <div class="featured-footer">
+                    <div class="featured-author">
+                        <img src="assets/uifaces-popular-avatar (1) (1).webp" alt="Dr. Aris Thorne">
+                        <span>Dr. Aris Thorne</span>
+                    </div>
+                    <span class="featured-date">Nov 15, 2026</span>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="margin-bottom: 30px;">More From Stackly Insights</h2>
+
+        <div class="blog-grid">
+            <!-- Blog Post 1 -->
+            <article class="blog-card reveal">
+                <img src="assets/toWEBP (1) (2)/team-meeting.webp" alt="Remote Collaboration" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category">Productivity</span>
+                    <h3>Mastering Remote Collaboration</h3>
+                    <p>Discover the best practices for leading high-impact remote teams and maintaining productivity in a distributed environment.</p>
+                    <div class="blog-footer">
+                        <div class="author">
+                            <img src="assets/uifaces-popular-avatar (2) (1).webp" alt="Dr. Sarah Chen">
+                            <span>Dr. Sarah Chen</span>
+                        </div>
+                        <span class="date">Oct 12, 2026</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Post 2 -->
+            <article class="blog-card reveal">
+                <img src="assets/hero_image_1.webp" alt="AI in Meetings" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category">Technology</span>
+                    <h3>The Rise of AI in Virtual Meetings</h3>
+                    <p>How artificial intelligence is transforming how we meet, from auto-summaries to smart noise cancellation and real-time translation.</p>
+                    <div class="blog-footer">
+                        <div class="author">
+                            <img src="assets/user_profile.webp" alt="James Wilson">
+                            <span>James Wilson</span>
+                        </div>
+                        <span class="date">Oct 08, 2026</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Post 3 -->
+            <article class="blog-card reveal">
+                <img src="assets/toWEBP (1) (2)/workplace1.webp" alt="Synchronous Work" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category">Productivity</span>
+                    <h3>5 Tips for Effective Synchronous Work</h3>
+                    <p>Reduce meeting fatigue by optimizing your team's synchronous communication habits and choosing the right tools for the job.</p>
+                    <div class="blog-footer">
+                        <div class="author">
+                            <img src="assets/uifaces-popular-avatar (1) (1).webp" alt="Elena Rodriguez">
+                            <span>Elena Rodriguez</span>
+                        </div>
+                        <span class="date">Sep 25, 2026</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Post 4 -->
+            <article class="blog-card reveal">
+                <img src="assets/toWEBP (1) (2)/workplace2.webp" alt="Securing Virtual Meetings" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category">Security</span>
+                    <h3>Securing Virtual Meetings: Compliance & Encryption</h3>
+                    <p>How enterprise-grade end-to-end encryption and custom access roles protect sensitive conversations and confidential data from breaches.</p>
+                    <div class="blog-footer">
+                        <div class="author">
+                            <img src="assets/uifaces-popular-avatar (4) (1).webp" alt="Prof. Marcus Vance">
+                            <span>Prof. Marcus Vance</span>
+                        </div>
+                        <span class="date">Nov 10, 2026</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Post 5 -->
+            <article class="blog-card reveal">
+                <img src="assets/toWEBP (1) (2)/banner-office.webp" alt="Home Office" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category">Workspace</span>
+                    <h3>Designing the Perfect Home Office</h3>
+                    <p>Essential gear and layout tips for a professional, ergonomic, and productive remote work environment that keeps you focused.</p>
+                    <div class="blog-footer">
+                        <div class="author">
+                            <img src="assets/author_david_vogel.png" alt="Dr. David Vogel">
+                            <span>Dr. David Vogel</span>
+                        </div>
+                        <span class="date">Nov 02, 2026</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Post 6 -->
+            <article class="blog-card reveal">
+                <img src="assets/collab_image.webp" alt="Distributed Trust" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category">Strategy</span>
+                    <h3>Building Trust in Distributed Teams</h3>
+                    <p>How to foster a strong company culture, build social capital, and maintain team cohesion when working from different locations.</p>
+                    <div class="blog-footer">
+                        <div class="author">
+                            <img src="assets/uifaces-popular-avatar (1) (1).webp" alt="Maya Patel">
+                            <span>Maya Patel</span>
+                        </div>
+                        <span class="date">Oct 28, 2026</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Post 7 -->
+            <article class="blog-card reveal">
+                <img src="assets/toWEBP (1) (2)/writing.webp" alt="Meeting Future" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category">Strategy</span>
+                    <h3>Moving Beyond the Hour-Long Meeting</h3>
+                    <p>Why micro-meetings and asynchronous updates are the future of team coordination in the modern digital workspace.</p>
+                    <div class="blog-footer">
+                        <div class="author">
+                            <img src="assets/uifaces-popular-avatar (2) (1).webp" alt="Lucas Thorne">
+                            <span>Lucas Thorne</span>
+                        </div>
+                        <span class="date">Oct 22, 2026</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Post 8 -->
+            <article class="blog-card reveal">
+                <img src="assets/toWEBP (1) (2)/workplace3.webp" alt="Digital Whiteboards" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category">Technology</span>
+                    <h3>Interactive Whiteboards: Unleashing Creativity</h3>
+                    <p>Discover how real-time sketching, sticky notes, and brainstorming canvases bring in-room creative energy to remote sessions.</p>
+                    <div class="blog-footer">
+                        <div class="author">
+                            <img src="assets/uifaces-popular-avatar (3) (1).webp" alt="Chloe Nakamoto">
+                            <span>Chloe Nakamoto</span>
+                        </div>
+                        <span class="date">Oct 18, 2026</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Blog Post 9 -->
+            <article class="blog-card reveal">
+                <img src="assets/toWEBP (1) (2)/workplace4.webp" alt="Agile Standups" class="blog-img">
+                <div class="blog-content">
+                    <span class="blog-category">Productivity</span>
+                    <h3>Applying Agile Standups to Hybrid Workspaces</h3>
+                    <p>How hybrid teams can restructure daily standups using automated meeting summaries and short, high-impact video check-ins.</p>
+                    <div class="blog-footer">
+                        <div class="author">
+                            <img src="assets/uifaces-popular-avatar (4) (1).webp" alt="Alan T. Bradley">
+                            <span>Alan T. Bradley</span>
+                        </div>
+                        <span class="date">Oct 01, 2026</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="pagination">
+            <a href="#">&laquo; Prev</a>
+            <a href="#" class="active">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">Next &raquo;</a>
+        </div>
+
+    </div>
+</section>
+
+<!-- Newsletter Section -->
+<section class="newsletter-section">
+    <div class="container newsletter-container">
+        <h3>Subscribe to Stackly Insights</h3>
+        <p class="newsletter-desc">Get the latest remote work innovations and meeting productivity strategies directly in your inbox.</p>
+        <form class="newsletter-form">
+            <input type="email" placeholder="Enter your business email" required class="newsletter-input">
+            <button type="submit" class="newsletter-btn">Subscribe</button>
+        </form>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <div class="logo"><img src="assets/logo.webp" alt="Stackly" style="height: 40px;"></div>
+            <p>
+                A clean, purpose-driven collaboration matrix platform built for teams who challenge physical boundaries. Host meetings, securely synchronize workspaces, and scale workflows effortlessly.
+            </p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="index.html">Home Ecosystem</a></li>
+                <li><a href="about.html">About Operations</a></li>
+                <li><a href="contact.html">Contact Engineering</a></li>
+                <li><a href="404.html">Join Live Channel</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Resources</h4>
+            <ul>
+                <li><a href="404.html">Help Center</a></li>
+                <li><a href="404.html">Documentation Portal</a></li>
+                <li><a href="404.html">Privacy Compliance</a></li>
+                <li><a href="404.html">Terms of Operations</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Follow Us</h4>
+            <div class="social-links">
+                <a href="404.html" aria-label="Instagram Profile"><i class="fa-brands fa-instagram"></i></a>
+                <a href="404.html" aria-label="Messenger Channel"><i class="fa-brands fa-facebook-messenger"></i></a>
+            
+                <a href="404.html" aria-label="LinkedIn Ecosystem"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Stackly Meeting Platform. All rights reserved globally.</p>
+    </div>
+</footer>
+
+<script>
+    // Menu Toggle
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('nav-list').classList.toggle('active');
+    });
+
+    // Scroll Reveal Animation
+    function reveal() {
+        let reveals = document.querySelectorAll(".reveal");
+        for (let i = 0; i < reveals.length; i++) {
+            let windowHeight = window.innerHeight;
+            let elementTop = reveals[i].getBoundingClientRect().top;
+            let elementVisible = 100;
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+            }
+        }
+    }
+    window.addEventListener("scroll", reveal);
+    document.addEventListener("DOMContentLoaded", reveal);
+
+    // Active Navbar Link Logic
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('#nav-list a').forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+            link.classList.add('active');
+        }
+    });
+
+    // Client-side Filter & Search Logic
+    const searchInput = document.querySelector('.search-bar input');
+    const filterTags = document.querySelectorAll('.filter-tag');
+    const blogCards = document.querySelectorAll('.blog-card');
+    const featuredCard = document.querySelector('.featured-post');
+
+    function filterPosts() {
+        const searchTerm = searchInput.value.toLowerCase().trim();
+        const activeTag = document.querySelector('.filter-tag.active').textContent.trim();
+
+        blogCards.forEach(card => {
+            const title = card.querySelector('h3').textContent.toLowerCase();
+            const desc = card.querySelector('p').textContent.toLowerCase();
+            const category = card.querySelector('.blog-category').textContent.trim();
+
+            const matchesSearch = title.includes(searchTerm) || desc.includes(searchTerm);
+            const matchesCategory = activeTag === 'All' || category.toLowerCase() === activeTag.toLowerCase();
+
+            if (matchesSearch && matchesCategory) {
+                card.style.display = 'flex';
+                setTimeout(() => {
+                    card.classList.add('active');
+                }, 50);
+            } else {
+                card.style.display = 'none';
+                card.classList.remove('active');
+            }
+        });
+
+        // For featured post
+        if (featuredCard) {
+            const fTitle = featuredCard.querySelector('.featured-title').textContent.toLowerCase();
+            const fDesc = featuredCard.querySelector('.featured-desc').textContent.toLowerCase();
+            const fCategory = featuredCard.querySelector('.featured-category').textContent.trim();
+
+            const matchesSearch = fTitle.includes(searchTerm) || fDesc.includes(searchTerm);
+            // Check if fCategory contains the activeTag (excluding "Featured • ")
+            const categoryClean = fCategory.replace('Featured • ', '').trim();
+            const matchesCategory = activeTag === 'All' || categoryClean.toLowerCase() === activeTag.toLowerCase();
+
+            if (matchesSearch && matchesCategory) {
+                featuredCard.style.display = 'grid';
+                setTimeout(() => {
+                    featuredCard.classList.add('active');
+                }, 50);
+            } else {
+                featuredCard.style.display = 'none';
+                featuredCard.classList.remove('active');
+            }
+        }
+    }
+
+    if (searchInput) {
+        searchInput.addEventListener('input', filterPosts);
+    }
+
+    filterTags.forEach(tag => {
+        tag.addEventListener('click', () => {
+            filterTags.forEach(t => t.classList.remove('active'));
+            tag.classList.add('active');
+            filterPosts();
+        });
+    });
+</script>
+
+</body>
+</html>

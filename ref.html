@@ -1,0 +1,658 @@
+﻿`
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stackly</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <div id="navbar-placeholder"></div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero reveal">
+            <video autoplay loop muted playsinline class="hero-video">
+                <source src="assests/home (1).mp4" type="video/mp4">
+            </video>
+            <div class="container hero-content">
+                <span class="hero-tag">Featured Story</span>
+                <h1 class="hero-title">The Art of Modern Living</h1>
+                <p class="hero-desc">Discover the ultimate guide to contemporary design, luxury lifestyle, and cultural
+                    shifts in our exclusive digital editorial.</p>
+                <a href="#trending" class="hero-btn">Read the Article</a>
+            </div>
+            <style>
+                .hero {
+                    overflow: hidden;
+                    background-image: none !important;
+                }
+
+                .hero-video {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    z-index: 0;
+                }
+
+                .hero::before {
+                    z-index: 1;
+                }
+
+                .hero-content {
+                    position: relative;
+                    z-index: 10;
+                }
+            </style>
+        </section>
+
+        <!-- Trending Section -->
+        <section id="trending" class="section">
+            <div class="container reveal">
+                <h2 class="section-title">Trending Now</h2>
+                <div class="grid-3">
+                    <article class="card">
+                        <div class="card-img-wrap">
+                            <img src="assests/Architecture.webp" alt="Architecture">
+                        </div>
+                        <div class="card-body">
+                            <span class="card-category">Architecture</span>
+                            <h3 class="card-title">Sustainable Urban Spaces</h3>
+                            <p class="card-desc">How forward-thinking architects are reshaping our cities with greenery
+                                and zero-emission goals.</p>
+                            <a href="404.html" class="card-link">Read Article &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-img-wrap">
+                            <img src="assests/Technology.webp" alt="Tech">
+                        </div>
+                        <div class="card-body">
+                            <span class="card-category">Technology</span>
+                            <h3 class="card-title">Next-Gen Workspaces</h3>
+                            <p class="card-desc">The future of remote work doesn't look like any office you've ever seen
+                                before.</p>
+                            <a href="404.html" class="card-link">Read Article &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-img-wrap">
+                            <img src="assests/Fashion (1).webp" alt="Fashion">
+                        </div>
+                        <div class="card-body">
+                            <span class="card-category">Fashion</span>
+                            <h3 class="card-title">Minimalist Autumn Returns</h3>
+                            <p class="card-desc">Pared-down aesthetics and high-quality materials are making a massive
+                                comeback this season.</p>
+                            <a href="404.html" class="card-link">Read Article &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <!-- Explore Categories -->
+        <section class="section bg-light">
+            <div class="container reveal">
+                <h2 class="section-title">Explore by Category</h2>
+                <div class="category-grid">
+                    <a href="404.html" class="category-item">
+                        <div class="category-img">
+                            <img src="assests/design.webp" alt="Design">
+                        </div>
+                        <h3>Design</h3>
+                        <p>Minimalist & Modern</p>
+                    </a>
+                    <a href="404.html" class="category-item">
+                        <div class="category-img">
+                            <img src="assests/Architecture (1).webp" alt="Architecture">
+                        </div>
+                        <h3>Architecture</h3>
+                        <p>Sustainable Living</p>
+                    </a>
+                    <a href="404.html" class="category-item">
+                        <div class="category-img">
+                            <img src="assests/culture.webp" alt="Culture">
+                        </div>
+                        <h3>Culture</h3>
+                        <p>Global Perspectives</p>
+                    </a>
+                    <a href="404.html" class="category-item">
+                        <div class="category-img">
+                            <img src="assests/lifestyle.webp" alt="Lifestyle">
+                        </div>
+                        <h3>Lifestyle</h3>
+                        <p>Luxury & Travel</p>
+                    </a>
+                </div>
+            </div>
+            <style>
+                .category-grid {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 1.5rem;
+                }
+
+                .category-item {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                    padding: 1.5rem;
+                    background: white;
+                    border-radius: 4px;
+                    transition: var(--transition);
+                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+                }
+
+                .category-item:hover {
+                    box-shadow: var(--shadow);
+                    transform: translateY(-5px);
+                }
+
+                .category-img {
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    margin-bottom: 1.5rem;
+                }
+
+                .category-img img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                .category-item h3 {
+                    font-size: 1.2rem;
+                    margin-bottom: 0.5rem;
+                }
+
+                .category-item p {
+                    font-size: 0.85rem;
+                    color: var(--text-light);
+                }
+
+                @media (max-width: 991px) {
+                    .category-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    .category-grid {
+                        grid-template-columns: 1fr;
+                    }
+                }
+            </style>
+        </section>
+
+        <!-- Exclusive Interviews Section -->
+        <section class="section bg-dark">
+            <div class="container reveal">
+                <h2 class="section-title" style="color: #fff;">Exclusive Interviews</h2>
+                <div class="grid-3" style="gap: 2rem;">
+                    <!-- Interview 1 -->
+                    <div
+                        style="position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <img src="assests/isabella_torres.webp" alt="Isabella Torres"
+                            style="width: 100%; height: 400px; object-fit: cover; display: block; transition: transform 0.5s ease;">
+                        <div
+                            style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem; background: linear-gradient(to top,  rgba(7, 4, 4, 0.9), transparent); color: white;">
+                            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color: #fff;">Isabella Torres</h3>
+                            <p style="font-size: 0.9rem; color: #ccc;">
+                                The visionary architect breaking the glass ceiling, redefining modern design with
+                                creativity, innovation, and a commitment to excellence in every project.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Interview 2 -->
+                    <div
+                        style="position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <img src="assests/marcus_chen.webp" alt="Marcus Chen"
+                            style="width: 100%; height: 400px; object-fit: cover; display: block; transition: transform 0.5s ease;">
+                        <div
+                            style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); color: white;">
+                            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color:  #fff;">Marcus Chen</h3>
+                            <p style="font-size: 0.9rem; color: #ccc;">
+                                Redefining sustainable fashion in the modern era, inspiring conscious choices through
+                                ethical practices, timeless designs, and a commitment to protecting our planet.
+                            </p>
+                        </div>
+                    </div>
+                    <!-- Interview 3 -->
+                    <div
+                        style="position: relative; overflow: hidden; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+                        <img src="assests/elena_rossi.webp" alt="Elena Rossi"
+                            style="width: 100%; height: 400px; object-fit: cover; display: block; transition: transform 0.5s ease;">
+                        <div
+                            style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 2rem; background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); color: white;">
+                            <h3 style="font-size: 1.5rem; margin-bottom: 0.5rem; color:  #fff;">Elena Rossi</h3>
+                            <p style="font-size: 0.9rem; color: #ccc;">
+                                The future of digital art and immersive experiences, where innovation and creativity
+                                come together to build interactive, visually rich environments that engage and inspire
+                                audiences worldwide.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <style>
+                .bg-dark .grid-3>div:hover img {
+                    transform: scale(1.05);
+                }
+            </style>
+        </section>
+
+        <!-- Zig Zag Editorial Section -->
+        <section class="section bg-light">
+            <div class="container">
+                <h2 class="section-title reveal">Editors' Picks</h2>
+
+                <div class="zigzag-row reveal">
+                    <div class="zigzag-img">
+                        <img src="assests/creative_minds.webp" alt="Creative minds">
+                    </div>
+                    <div class="zigzag-content">
+                        <h3>Where Creativity Meets Discipline</h3>
+                        <p>We sit down with leading designers to uncover the strict routines that fuel their endless
+                            creativity. Behind every masterpiece is a rigorous process waiting to be discovered.</p>
+                        <a href="404.html" class="btn-primary">View Interview</a>
+                    </div>
+                </div>
+
+                <div class="zigzag-row reveal">
+                    <div class="zigzag-img">
+                        <img src="assests/culinary_art.webp" alt="Culinary art">
+                    </div>
+                    <div class="zigzag-content">
+                        <h3>The New Culinary Avant-Garde</h3>
+                        <p>Forget everything you thought you knew about fine dining. The next generation of chefs is
+                            breaking the rules and prioritizing sustainability without sacrificing flavor.</p>
+                        <a href="404.html" class="btn-primary">Discover More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Multimedia Section -->
+        <section class="section multimedia-section">
+            <div class="container reveal">
+                <div class="multimedia-wrapper">
+                    <div class="multimedia-content">
+                        <span class="category"
+                            style="color: var(--secondary); font-weight: 700; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Multimedia</span>
+                        <h2 style="font-size: 2.2rem; margin-top: 1rem;">The Future of Fashion: An Immersive Journey
+                        </h2>
+                        <p style="margin: 1.5rem 0 2.5rem; color: var(--text-light); line-height: 1.6;">Join us as we go
+                            behind the scenes with the designers who are pushing the boundaries of
+                            virtual couture and digital identity. More than just a trend, it's a revolution.</p>
+                        <a href="404.html" class="btn-primary">Watch the Film</a>
+                    </div>
+                </div>
+            </div>
+            <style>
+                .multimedia-section {
+                    padding: 8rem 0;
+                    position: relative;
+                }
+
+                .multimedia-wrapper {
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    background-image: url('assests/fashion2.webp');
+                    background-size: cover;
+                    background-position: center;
+                    border-radius: 8px;
+                    height: 550px;
+                    padding-right: 5rem;
+                    box-shadow: var(--shadow);
+                }
+
+                .multimedia-content {
+                    background: white;
+                    padding: 4rem;
+                    max-width: 500px;
+                    border-radius: 4px;
+                    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+                }
+
+                @media (max-width: 991px) {
+                    .multimedia-wrapper {
+                        padding-right: 2rem;
+                        height: 450px;
+                    }
+
+                    .multimedia-content {
+                        max-width: 400px;
+                        padding: 2.5rem;
+                    }
+                }
+
+                @media (max-width: 768px) {
+                    .multimedia-wrapper {
+                        justify-content: center;
+                        padding: 3rem 1.5rem;
+                        height: auto;
+                        background: #f9f9f9;
+                        background-image: none;
+                    }
+
+                    .multimedia-content {
+                        max-width: 100%;
+                        box-shadow: none;
+                        padding: 0;
+                        background: none;
+                        text-align: center;
+                    }
+                }
+            </style>
+        </section>
+
+        <!-- Magazine Archive Section -->
+        <section class="section" style="background: #fafafa;">
+            <div class="container reveal">
+                <h2 class="section-title">The Archive</h2>
+                <p
+                    style="text-align: center; margin-bottom: 4rem; max-width: 600px; margin-left: auto; margin-right: auto; color: var(--text-light);">
+                    Revisit our historical issues and discover timeless stories that defined luxury
+                    and style over the past decade.</p>
+
+                <div class="archive-grid">
+                    <div class="archive-item">
+                        <img src="assests/summer_collection.webp" alt="Summer Collection Issue">
+                        <div class="archive-info">
+                            <h4 style="font-family: var(--font-heading); font-size: 1.2rem;">The Summer Collection</h4>
+                            <span
+                                style="font-size: 0.85rem; color: var(--secondary); font-weight: 700; text-transform: uppercase;">Issue
+                                #42</span>
+                        </div>
+                    </div>
+                    <div class="archive-item">
+                        <img src="assests/renewal_rebirth.webp" alt="Renewal and Rebirth Issue">
+                        <div class="archive-info">
+                            <h4 style="font-family: var(--font-heading); font-size: 1.2rem;">Renewal and Rebirth</h4>
+                            <span
+                                style="font-size: 0.85rem; color: var(--secondary); font-weight: 700; text-transform: uppercase;">Issue
+                                #41</span>
+                        </div>
+                    </div>
+                    <div class="archive-item">
+                        <img src="assests/quiet_luxury_sustainable_hero.webp" alt="Quiet Luxury Issue">
+                        <div class="archive-info">
+                            <h4 style="font-family: var(--font-heading); font-size: 1.2rem;">The Quiet Luxury</h4>
+                            <span
+                                style="font-size: 0.85rem; color: var(--secondary); font-weight: 700; text-transform: uppercase;">Issue
+                                #40</span>
+                        </div>
+                    </div>
+                    <div class="archive-item">
+                        <img src="assests/shot-wind-turbines-mountains (1).webp" alt="Sustainable Horizons Issue">
+                        <div class="archive-info">
+                            <h4 style="font-family: var(--font-heading); font-size: 1.2rem;">Sustainable Horizons</h4>
+                            <span
+                                style="font-size: 0.85rem; color: var(--secondary); font-weight: 700; text-transform: uppercase;">Issue
+                                #39</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 4rem;">
+                    <a href="404.html" class="btn-secondary" style="border-width: 1px; padding: 0.8rem 2rem;">Explore
+                        Full Archive</a>
+                </div>
+            </div>
+            <style>
+                .archive-grid {
+                    display: grid;
+                    grid-template-columns: repeat(4, 1fr);
+                    gap: 2.5rem;
+                }
+
+                .archive-item {
+                    transition: var(--transition);
+                }
+
+                .archive-item img {
+                    width: 100%;
+                    height: 480px;
+                    object-fit: cover;
+                    border-radius: 2px;
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+                    transition: var(--transition);
+                }
+
+                .archive-item:hover img {
+                    transform: translateY(-12px);
+                    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+                }
+
+                .archive-info {
+                    margin-top: 1.5rem;
+                }
+
+                @media (max-width: 991px) {
+                    .archive-grid {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    .archive-grid {
+                        grid-template-columns: 1fr;
+                    }
+
+                    .archive-item img {
+                        height: 400px;
+                    }
+                }
+            </style>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section reveal">
+            <div class="container">
+                <h2 class="cta-title">Never Miss an Issue</h2>
+                <p class="cta-desc">Join our exclusive network and get premium editorial content delivered straight to
+                    your inbox.</p>
+                <a href="login.html" class="btn-primary"
+                    style="background:var(--primary);color:var(--secondary);border-color:var(--primary);">Subscribe
+                    Now</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-grid">
+
+            <!-- Brand -->
+            <div class="footer-col">
+                <a href="index.html" class="logo">
+                    <img src="assests/logo.yellow.webp" alt="Logo">
+                </a>
+                <p class="footer-desc">
+                    A premium digital magazine delivering insights on modern lifestyle, design, fashion, and innovation.
+                </p>
+            </div>
+
+            <!-- Navigation -->
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="login.html">login</a></li>
+                </ul>
+            </div>
+
+            <!-- Categories -->
+            <div class="footer-col">
+                <h3>Categories</h3>
+                <ul>
+                    <li><a href="404.html">Architecture</a></li>
+                    <li><a href="404.html">Technology</a></li>
+                    <li><a href="404.html">Fashion</a></li>
+                    <li><a href="404.html">Lifestyle</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-socials">
+                <a href="404.html"><i class="fab fa-facebook-f"></i></a>
+                <a href="404.html"><i class="fab fa-instagram"></i></a>
+                <a href="404.html"><i class="fab fa-twitter"></i></a>
+                <a href="404.html"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+
+            <!-- Bottom -->
+            <div class="footer-bottom">
+                <p>© 2026 LUXEMAG. All rights reserved.</p>
+            </div>
+    </footer>
+    <style>
+        .footer {
+            background: #0f172a;
+            color: #fff;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-logo {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .footer-desc {
+            color: #cbd5f5;
+            line-height: 1.6;
+        }
+
+        .footer-col h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #cbd5f5;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .footer-form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-form input {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .footer-form button {
+            padding: 10px;
+            background: #6366f1;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .footer-form button:hover {
+            background: #4f46e5;
+        }
+
+        .error-msg {
+            color: #f87171;
+            font-size: 12px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 40px;
+            border-top: 1px solid #1e293b;
+            padding-top: 15px;
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        .footer-socials {
+            margin-top: 20px;
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-socials a {
+            width: 40px;
+            height: 40px;
+            background: #1e293b;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: #cbd5f5;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        /* Hover effects (modern look) */
+        .footer-socials a:hover {
+            transform: translateY(-5px) scale(1.1);
+            color: #fff;
+        }
+
+        /* Individual brand colors on hover */
+        .footer-socials a:nth-child(1):hover {
+            background: #1877f2;
+            /* Facebook */
+        }
+
+        .footer-socials a:nth-child(2):hover {
+            background: #e1306c;
+            /* Instagram */
+        }
+
+        .footer-socials a:nth-child(3):hover {
+            background: #1da1f2;
+            /* Twitter */
+        }
+
+        .footer-socials a:nth-child(4):hover {
+            background: #0077b5;
+            /* LinkedIn */
+        }
+    </style>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

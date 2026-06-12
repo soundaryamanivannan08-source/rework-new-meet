@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+color:white;
+text-align:center;
+}
+
+.error-container h1{
+font-size:120px;
+font-weight:700;
+margin-bottom:10px;
+}
+
+.error-container h2{
+font-size:32px;
+margin-bottom:15px;
+}
+
+.error-container p{
+font-size:18px;
+margin-bottom:30px;
+opacity:0.9;
+}
+
+.home-btn{
+display:inline-block;
+padding:12px 30px;
+background:white;
+color:#007bff;
+text-decoration:none;
+font-weight:bold;
+border-radius:30px;
+transition:0.3s;
+}
+
+.home-btn:hover{
+background:#e3f2fd;
+color:#0056b3;
+transform:translateY(-3px);
+}
+
+/* FINAL RESPONSIVE SAFETY NET */
+@media (max-width: 900px) {
+    .pricing-cards .card { width: 100%; max-width: 350px; margin: 0 auto; }
+    .card { max-width: 100%; }
+    .vision-container { grid-template-columns: 1fr; }
+    .principles-container { flex-direction: column; align-items: center; }
+}
+
+@media (max-width: 576px) {
+    .footer-container { grid-template-columns: 1fr !important; text-align: center; }
+    .social-links { justify-content: center; }
+    .footer-col { margin-bottom: 20px; }
+    .error-container h1 { font-size: 5rem !important; }
+    .error-container h2 { font-size: 1.8rem !important; }
+    .error-container p { font-size: 1rem !important; }
+}
+
+@media (max-width: 480px) {
+    body {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+        padding: 40px 20px;
+    }
+}
