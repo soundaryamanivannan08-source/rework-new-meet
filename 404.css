@@ -50,6 +50,14 @@ color:#0056b3;
 transform:translateY(-3px);
 }
 
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
 /* FINAL RESPONSIVE SAFETY NET */
 @media (max-width: 900px) {
     .pricing-cards .card { width: 100%; max-width: 350px; margin: 0 auto; }
@@ -65,6 +73,10 @@ transform:translateY(-3px);
     .error-container h1 { font-size: 5rem !important; }
     .error-container h2 { font-size: 1.8rem !important; }
     .error-container p { font-size: 1rem !important; }
+    .button-group {
+        flex-direction: column;
+        gap: 12px;
+    }
 }
 
 @media (max-width: 480px) {
